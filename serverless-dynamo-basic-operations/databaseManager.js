@@ -9,15 +9,15 @@ module.export.saveItem = async item => {
          TableName: TABLE_NAME,
          Item: item
     }
-    let item
+    let item1
     try { 
-        item = await dynamo.put(params).promise()
+        item1 = await dynamo.put(params).promise()
     }catch(e){
         console.log('====================================');
         console.log(e);
         console.log('====================================');
     }
-    return item.itemId
+    return item1.itemId
 }
 
 module.export.getItem = async itemId => {
